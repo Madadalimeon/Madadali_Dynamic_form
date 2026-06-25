@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Dynamic Form</title>
 </head>
+
 <body>
   <div class="container border mt-5">
     <div class="row">
       <div class="col">
         <h2 class="text-center text-primary my-3">Dynamic form</h2>
         <div class="card-body">
-          <form action="" method="post">
+          <form action="./../Controller/form.php" method="post">
             <label for="" class="form-label">Form Name</label>
             <input class="form-control" type="text" name="Form_name" placeholder="Enter your Form Name">
             <input class="btn btn-primary mt-3  w-100" type="submit" value="submit">
