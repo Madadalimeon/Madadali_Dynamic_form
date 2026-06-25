@@ -4,7 +4,7 @@ class Database
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $db = "dynamic_form";
+    private $db = "dynamic_from";
     public $conn;
     function Database()
     {
