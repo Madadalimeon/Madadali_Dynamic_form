@@ -14,11 +14,10 @@ class form_database_query
     public function Form_Add($form_name)
     {
         $query = "INSERT INTO forms_name (Form_name) VALUES ('$form_name')";
+        $result = mysqli_query($this->conn, $query);
 
-        if (mysqli_query($this->conn, $query) == true ) {
+        if ($result) {
             header("location: ../App/index.php");
-        } else {
-            return mysqli_error($this->conn);
         }
     }
 }

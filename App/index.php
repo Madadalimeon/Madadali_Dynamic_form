@@ -1,3 +1,6 @@
+<?php
+include("../Config/Config.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -32,16 +35,26 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>login</td>
-        <td>
-          <a class="btn btn-primary" href="./Add.php" role="button">Add</a>
-          <a class="btn btn-primary" href="./Update.php" role="button">Update</a>
-          <a class="btn btn-primary" href="./Delete.php" role="button">Delete</a>
-          <a class="btn btn-primary" href="./View.php" role="button">View</a>
-        </td>
-      </tr>
+      <?php
+      $database = new Database;
+      $database->Database();
+      $sql = "SELECT * FROM forms_name";
+      $Result = mysqli_query($database->conn, $sql);
+      while ($row = mysqli_fetch_assoc($Result)) {        
+      ?>
+        <tr>
+          <th scope="row"><?= $row["Form_id"] ?></th>
+          <td><?= $row["Form_name"] ?></td>
+          <td>
+            <a class="btn btn-primary" href="./Add.php?form_id=<?= $row["Form_id"] ?>" role="button">Add</a>
+            <a class="btn btn-primary" href="./Update.php?form_id=<?= $row["Form_id"] ?> " role="button">Update</a>
+            <a class="btn btn-primary" href="./Delete.php?form_id=<?= $row["Form_id"] ?> " role="button">Delete</a>
+            <a class="btn btn-primary" href="./View.php?form_id=<?= $row["Form_id"] ?>" role="button">View</a>
+          </td>
+        <?php
+      }
+        ?>
+        </tr>
   </table>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
