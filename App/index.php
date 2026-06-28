@@ -11,7 +11,7 @@ include("../Inc/top.php");
 <div class="container border sha mt-3">
     <p class="fs-5 pt-2 ps-2 fw-bold">Create New Form</p>
     <div class="container-form border p-3">
-        <form action="">
+        <form action="../Controller/Form/Controller_form.php">
             <label class="form-label fw-bold ms-2">Form Name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Form Name">
             <input type="submit" class="btn btn-primary mt-2 " value="Create Form">
